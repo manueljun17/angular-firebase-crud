@@ -1,0 +1,55 @@
+<div class="registration-page">
+    <base-nav></base-nav>
+    <div class="form-container">
+        <form>
+            <div class="primary-photo">
+                <img [src]="urlPhoto">
+                <span class="camera fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+                </span>
+                <input type="file" name="inputFile" [(ngModel)]="inputFileValue" #file (change)="onChangeFile($event, file.value)" accept="image/*">
+                <progress *ngIf=" file_progress " class="progressbar" value="{{ position }}" max="100">
+                    <div class="progress">
+                        <span class="progress-bar" [style.width]="widthProgress"></span>
+                    </div>
+                </progress>
+            </div>
+            <div class="user-information">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                    <input [(ngModel)]="registrationForm.firstname" name="firstname" type="text" class="form-control" placeholder="First Name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o fa-fw"></i></span>
+                    <input [(ngModel)]="registrationForm.lastname" name="lastname" type="text" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle fa-fw"></i></span>
+                    <input [(ngModel)]="registrationForm.email" name="email" type="email" class="form-control" placeholder="Email Address">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+                    <input [(ngModel)]="password" name="password" type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                    <input [(ngModel)]="registrationForm.birthday" name="age" type="date" class="form-control" placeholder="Birthday">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-venus-mars fa-fw"></i></span>
+                    <select class="custom-select form-control" [(ngModel)]="registrationForm.gender" name="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button class="btn form-control" (click)="onClickRegister()">Register</button>
+                </div>
+            </div>
+            
+        </form> 
+    </div>
+</div>

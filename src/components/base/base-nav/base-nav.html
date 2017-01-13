@@ -1,0 +1,33 @@
+<nav>
+<div class="container">
+    <div class="group-buttons" *ngIf="!auth">
+        <span class="fa-stack fa-lg" (click)="onClickLogin()">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-sign-in fa-stack-1x fa-inverse"></i>
+        </span>
+        <strong> Login </strong>
+        <span class="fa-stack fa-lg" (click)="onClickRegister()">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-user-plus fa-stack-1x fa-inverse"></i>
+        </span>
+        <strong> Register </strong>
+    </div>
+    <div class="group-buttons" *ngIf="auth">
+        <span class="fa-stack fa-lg" routerLink="/home">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+        </span>
+        <strong> Home </strong>
+        <span class="fa-stack fa-lg" routerLink="/profile">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-vcard-o fa-stack-1x fa-inverse"></i>
+        </span>
+        <strong> Profile </strong>
+        <span class="fa-stack fa-lg" (click)="onClickLogout()">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-sign-out fa-stack-1x fa-inverse"></i>
+        </span>
+        <strong> Logout </strong>
+    </div>
+</div>
+</nav>

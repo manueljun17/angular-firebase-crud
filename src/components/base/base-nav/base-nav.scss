@@ -1,0 +1,21 @@
+$color_pallete_1:#1093c7;
+$color_pallete_2:#25282d;
+$color_pallete_3:#ecedef;
+$color_pallete_4:#0d6ea3;
+nav {
+        background: $color_pallete_2;
+        .group-buttons {
+                span {
+                        cursor:pointer;
+                        i {
+                                color: $color_pallete_4;
+                                &.fa-inverse {
+                                color: $color_pallete_3;
+                                }
+                        }
+                }
+                strong {
+                        color:$color_pallete_3;
+                }
+        }
+}

@@ -1,0 +1,21 @@
+<div class="entrance-page">
+    <base-nav></base-nav>
+    <div class="form-container">
+        <form>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                <input [(ngModel)]="loginForm.email" name="email" type="email" class="form-control" placeholder="Email Address">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+                <input [(ngModel)]="loginForm.password" name="password" type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="input-group">
+                <button class="btn form-control" (click)="onClickLogin()">Sign In</button>
+            </div>
+            <div class="input-group">
+                <button class="btn form-control" (click)="onClickReset()">Reset</button>
+            </div>
+        </form> 
+    </div>
+</div>
